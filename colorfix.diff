@@ -24,7 +24,7 @@ diff -ru src/src/tsm/tsm-vte.c patched/src/tsm/tsm-vte.c
 +	[COLOR_CYAN]          = {   0, 170, 170 }, /* cyan */
 +	[COLOR_RED]           = { 170,   0,   0 }, /* red */
 +	[COLOR_MAGENTA]       = { 170,   0, 170 }, /* magenta */
-+	[COLOR_YELLOW]        = { 170, 170,   0 }, /* yellow */
++	[COLOR_YELLOW]        = { 170,  85,   0 }, /* yellow */
 +	[COLOR_LIGHT_GREY]    = { 170, 170, 170 }, /* light grey */
 +	[COLOR_DARK_GREY]     = {  85,  85,  85 }, /* dark grey */
 +	[COLOR_LIGHT_BLUE]    = {  85,  85, 255 }, /* light blue */
