@@ -15,7 +15,7 @@ provides=('libtsm')
 conflicts=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 replaces=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 source=("colorfix.diff")
-md5sums=('6999f0907b65afa6c0ffa0ab1fce5cad')
+md5sums=('24c18537ca2c92790b2c4748b99e205d')
 
 prepare() {
 	rm colorfix.diff
