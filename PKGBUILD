@@ -18,7 +18,7 @@ source=("colorfix.diff")
 md5sums=('6999f0907b65afa6c0ffa0ab1fce5cad')
 
 prepare() {
-	rm colorfix.patch
+	rm colorfix.diff
 	git clone https://github.com/Aetf/libtsm.git . || \
 	git pull
 	patch -Np1 -i ../colorfix.diff || true
