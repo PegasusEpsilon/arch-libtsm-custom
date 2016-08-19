@@ -14,14 +14,14 @@ license=('GPL')
 provides=('libtsm')
 conflicts=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 replaces=('libtsm' 'libtsm-git' 'libtsm-patched-git')
-source=("colorfix.patch")
+source=("colorfix.diff")
 md5sums=('6999f0907b65afa6c0ffa0ab1fce5cad')
 
 prepare() {
 	rm colorfix.patch
 	git clone https://github.com/Aetf/libtsm.git . || \
 	git pull
-	patch -Np1 -i ../colorfix.patch || true
+	patch -Np1 -i ../colorfix.diff || true
 }
 
 build() {
