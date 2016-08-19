@@ -12,14 +12,16 @@ arch=('any')
 url="https://github.com/Aetf/libtsm"
 license=('GPL')
 provides=('libtsm')
-replaces=('libtsm-git' 'libtsm' 'libtsm-patched-git')
+conflicts=('libtsm' 'libtsm-git' 'libtsm-patched-git')
+replaces=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 source=("colorfix.patch")
 md5sums=('6999f0907b65afa6c0ffa0ab1fce5cad')
 
 prepare() {
 	rm colorfix.patch
-	git clone https://github.com/Aetf/libtsm.git .
-	patch -p1 < ../colorfix.patch
+	git clone https://github.com/Aetf/libtsm.git . || \
+	git pull
+	patch -Np1 -i ../colorfix.patch || true
 }
 
 build() {
