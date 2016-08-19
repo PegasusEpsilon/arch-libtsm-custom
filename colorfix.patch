@@ -1,0 +1,42 @@
+diff -ru src/src/tsm/tsm-vte.c patched/src/tsm/tsm-vte.c
+--- src/src/tsm/tsm-vte.c	2016-08-19 14:55:25.707314997 -0500
++++ patched/src/tsm/tsm-vte.c	2016-08-19 14:59:03.865655953 -0500
+@@ -207,23 +207,23 @@
+ 
+ static uint8_t color_palette[COLOR_NUM][3] = {
+ 	[COLOR_BLACK]         = {   0,   0,   0 }, /* black */
+-	[COLOR_RED]           = { 205,   0,   0 }, /* red */
+-	[COLOR_GREEN]         = {   0, 205,   0 }, /* green */
+-	[COLOR_YELLOW]        = { 205, 205,   0 }, /* yellow */
+-	[COLOR_BLUE]          = {   0,   0, 238 }, /* blue */
+-	[COLOR_MAGENTA]       = { 205,   0, 205 }, /* magenta */
+-	[COLOR_CYAN]          = {   0, 205, 205 }, /* cyan */
+-	[COLOR_LIGHT_GREY]    = { 229, 229, 229 }, /* light grey */
+-	[COLOR_DARK_GREY]     = { 127, 127, 127 }, /* dark grey */
+-	[COLOR_LIGHT_RED]     = { 255,   0,   0 }, /* light red */
+-	[COLOR_LIGHT_GREEN]   = {   0, 255,   0 }, /* light green */
+-	[COLOR_LIGHT_YELLOW]  = { 255, 255,   0 }, /* light yellow */
+-	[COLOR_LIGHT_BLUE]    = {  92,  92, 255 }, /* light blue */
+-	[COLOR_LIGHT_MAGENTA] = { 255,   0, 255 }, /* light magenta */
+-	[COLOR_LIGHT_CYAN]    = {   0, 255, 255 }, /* light cyan */
++	[COLOR_BLUE]          = {   0,   0, 170 }, /* blue */
++	[COLOR_GREEN]         = {   0, 170,   0 }, /* green */
++	[COLOR_CYAN]          = {   0, 170, 170 }, /* cyan */
++	[COLOR_RED]           = { 170,   0,   0 }, /* red */
++	[COLOR_MAGENTA]       = { 170,   0, 170 }, /* magenta */
++	[COLOR_YELLOW]        = { 170, 170,   0 }, /* yellow */
++	[COLOR_LIGHT_GREY]    = { 170, 170, 170 }, /* light grey */
++	[COLOR_DARK_GREY]     = {  85,  85,  85 }, /* dark grey */
++	[COLOR_LIGHT_BLUE]    = {  85,  85, 255 }, /* light blue */
++	[COLOR_LIGHT_GREEN]   = {  85, 255,  85 }, /* light green */
++	[COLOR_LIGHT_CYAN]    = {  85, 255, 255 }, /* light cyan */
++	[COLOR_LIGHT_RED]     = { 255,  85,  85 }, /* light red */
++	[COLOR_LIGHT_MAGENTA] = { 255,  85, 255 }, /* light magenta */
++	[COLOR_LIGHT_YELLOW]  = { 255, 255,  85 }, /* light yellow */
+ 	[COLOR_WHITE]         = { 255, 255, 255 }, /* white */
+ 
+-	[COLOR_FOREGROUND]    = { 229, 229, 229 }, /* light grey */
++	[COLOR_FOREGROUND]    = { 170, 170, 170 }, /* light grey */
+ 	[COLOR_BACKGROUND]    = {   0,   0,   0 }, /* black */
+ };
+ 
