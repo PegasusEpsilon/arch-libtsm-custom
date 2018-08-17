@@ -5,7 +5,7 @@
 
 # Maintainer: The Almighty Pegasus Epsilon <pegasus@pimpninjas.org>
 pkgname=libtsm-git-pegasus
-pkgver=75018d0
+pkgver=libtsm_4.0.0_3_geb319d1
 pkgrel=1
 pkgdesc="Terminal-emulator State Machine. Patched up nice."
 arch=('i686' 'x86_64')
@@ -32,4 +32,4 @@ build() {
 
 check() { make -k check; }
 package() { make DESTDIR="$pkgdir/" install; }
-pkgver() { git describe --always; }
+pkgver() { git describe --always | sed -e 's/-/_/g'; }
