@@ -4,8 +4,8 @@
 # then please put 'unknown'.
 
 # Maintainer: The Almighty Pegasus Epsilon <pegasus@pimpninjas.org>
-pkgname=libtsm-git-pegasus
-pkgver=libtsm_4.0.0_3_geb319d1
+pkgname=arch-libtsm-custom
+pkgver=v4.0.1_1_g502ff6e
 pkgrel=1
 pkgdesc="Terminal-emulator State Machine. Patched up nice."
 arch=('i686' 'x86_64')
@@ -15,21 +15,24 @@ provides=('libtsm')
 conflicts=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 replaces=('libtsm' 'libtsm-git' 'libtsm-patched-git')
 source=("colorfix.diff")
-md5sums=('24c18537ca2c92790b2c4748b99e205d')
+md5sums=('8b46d269678776be2e31a15bd4eb9c7e')
 
 prepare() {
 	rm colorfix.diff
 	git clone https://github.com/Aetf/libtsm.git . || \
-	git pull
+	git reset --hard && git pull
 	patch -Np1 -i ../colorfix.diff || true
 }
 
 build() {
-	test -f ./configure || NOCONFIGURE=1 ./autogen.sh
-	./configure --prefix=/usr
+	mkdir build || true
+	cd build
+	cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR:PATH=lib
+#	test -f ./configure || NOCONFIGURE=1 ./autogen.sh
+#	./configure --prefix=/usr
 	make
 }
 
-check() { make -k check; }
-package() { make DESTDIR="$pkgdir/" install; }
+#check() { cd build; make -k check; }
+package() { cd build; make DESTDIR="$pkgdir/" install; }
 pkgver() { git describe --always | sed -e 's/-/_/g'; }
